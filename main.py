@@ -38,6 +38,10 @@ yertle.speed(0)
 yertle.shape("turtle")
 deltax = random.randint(-2,2)
 deltay = random.randint(-2,2)
+while deltax == 0:
+    deltax = random.randint(-2,2)
+while deltay == 0:
+    deltay = random.randint(-2,2)
 
 def move_xy(turtle, deltax, deltay):
     newy = turtle.ycor()+ deltay
@@ -56,8 +60,9 @@ def move_xy(turtle, deltax, deltay):
 
 alive = True
 while alive:
-    deltax, delay = move_xy(yertle,deltax,deltay)
-
+    delta = move_xy(yertle, deltax, deltay)
+    deltax = delta[0]
+    delay = delta[1]
     
 
 
