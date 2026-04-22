@@ -3,6 +3,7 @@ import random
 def generate_color():
     return f"#{random.randint(0, 0xFFFFFF):06x}"
 
+
 def create_turtle():
     yertle = Turtle()
     yertle.color(generate_color())
@@ -10,6 +11,11 @@ def create_turtle():
     yertle.shape("circle")
     yertle.setheading(random.randint(-2,2))
     return yertle
+
+
+
+
+
 
 
 
@@ -29,6 +35,10 @@ def move_heading(t, turtles):
 
 
 
+
+
+
+
 def playing_area():
     pen = Turtle()
     pen.color("yellow")
@@ -41,11 +51,14 @@ def playing_area():
     pen.end_fill()
 
 
+
+
 def move_xy(turtle, deltax, deltay):
     newy = turtle.ycor()+ deltay
     if newy > 240 or newy < -240:
         newy = turtle.ycor()
         deltay *= -1
+
 
     newx = turtle.xcor()+ deltax
     if newx > 240 or newx < -240:
@@ -53,7 +66,9 @@ def move_xy(turtle, deltax, deltay):
         deltax *= -1
     turtle.goto(newx, newy)
 
+
     return deltax, deltay
+
 
 playing_area()
 def create_player():
@@ -63,10 +78,13 @@ def create_player():
     player.color("black")
     player.shape("turtle")
 
+
 def up():
     global player
     player.setheading(90)
     player.sety(player.ycor()+ 10)
+
+
 
 
 def down():
@@ -75,10 +93,14 @@ def down():
     player.sety(player.ycor() - 10)
 
 
+
+
 def right():
     global player
     player.setheading(0)
     player.setx(player.xcor()+ 10)
+
+
 
 
 def left():
@@ -90,7 +112,15 @@ def left():
 
 
 
+
+
+
+
+
 player = None
+
+
+
 
 
 
@@ -109,12 +139,19 @@ screen.onkeypress(left, "a")
 
 
 
+
+
+
+
+
 yertle = Turtle()
 yertle.color("red")
 yertle.speed(0)
 yertle.shape("turtle")
 
+
 turtles = [yertle]
+
 
 alive = True
 while alive:
@@ -129,8 +166,14 @@ while alive:
 
 
 
+
+
+
+
+
 turtles = [yertle]
 
 
-screen.exitonclick()
 
+
+screen.exitonclick()
